@@ -1,0 +1,14 @@
+A description of all files here
+
+p1.py - python script for problem 1
+p2.py - python script for problem 2
+p4.py - python script for problem 4&5
+
+fig1.pdf fig2.pdf - plots for problem 2
+fig3.pdf fig4.pdf - plots for problem 4&5
+
+tb1.txt tb1.tex - table for problem 1, in ASCII and tex form
+tb2.txt - table for problem 4&5
+
+ws2.tex ws2.pdf - the report for this work sheet
+Makefile - the Makefile to compile the tex file
