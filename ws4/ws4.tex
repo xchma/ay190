@@ -1,0 +1,41 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load some basic packages that are useful to have
+% and that should be part of any LaTeX installation.
+%
+% be able to include figures
+\usepackage{graphicx}
+% get nice colors
+\usepackage{xcolor}
+
+% change default font to Palatino (looks nicer!)
+\usepackage{apjfonts}
+% load some useful math symbols/fonts
+\usepackage{latexsym,amsfonts,amsmath,amssymb}
+
+% comfort package to easily set margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% control some spacings
+%
+% spacing after a paragraph
+\setlength{\parskip}{.15cm}
+% indentation at the top of a new paragraph
+\setlength{\parindent}{0.0cm}
+
+
+\begin{document}
+
+\begin{center}
+\Large
+{\bf Ay190 -- Worksheet 4} \\
+\large
+Xiangcheng Ma \\
+Date: \today
+\end{center}
+
+\section*{Eccentricity Anomality}
+In this question, I use the Secant Method, with initial value $E_1=\omega t$ and $E_2=\omega t + \epsilon$. I adopt $\epsilon=10^{-3}$ in my calculation. The results of $E$, $x$, $y$ and iteration steps are tabulated in Table~\ref{table}.
+\input{tb}
+
+\end{document}
