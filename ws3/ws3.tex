@@ -1,0 +1,71 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load some basic packages that are useful to have
+% and that should be part of any LaTeX installation.
+%
+% be able to include figures
+\usepackage{graphicx}
+% get nice colors
+\usepackage{xcolor}
+
+% change default font to Palatino (looks nicer!)
+\usepackage{apjfonts}
+% load some useful math symbols/fonts
+\usepackage{latexsym,amsfonts,amsmath,amssymb}
+
+% comfort package to easily set margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% control some spacings
+%
+% spacing after a paragraph
+\setlength{\parskip}{.15cm}
+% indentation at the top of a new paragraph
+\setlength{\parindent}{0.0cm}
+
+
+\begin{document}
+
+\begin{center}
+\Large
+{\bf Ay190 -- Worksheet 3} \\
+\large
+Xiangcheng Ma \\
+Date: \today
+\end{center}
+
+\section{Integration via Newton-Cotes Formulae}
+(a) The accurate result is
+\begin{equation}
+  \int_0^{\pi} \sin x~{\rm d}x = 2.
+\end{equation}
+I tabulate the numerical results of mid-point, trapezoidal and Simpson's formulae in Table~\ref{tb1}.
+
+(b) The accurate result is
+\begin{equation}
+  \int_0^{\pi} x\sin x~{\rm d}x = \pi .
+\end{equation}
+I tabulate the numerical results of mid-point, trapezoidal and Simpson's formulae in Table~\ref{tb1}.
+
+From Table~\ref{tb1}, we can see the mid-point and trapezoidal formulae have error of order $O(h^2)$, while the Simpson's rule has an error of order $O(h^4)$. As we expected, when h drops by a factor of 2, the error of mid-point and trapezoidal formulae decrease by a factor of 4, but the error of Simpson's rule reduced by a factor of 16. Note that it is probably not what appears exactly on the lecture notes. The reason is that the error on the lecture note is the error of integration over a specific interval, while here the error is amplified by a factor of $\sim1/h$ because we divide the interval into $\sim1/h$ smaller intervals.
+\input{tb1}
+
+
+\section{Gaussian Quadrature}
+(a) I will focus on the integral
+\begin{equation}
+  I = \int_0^{\infty} \frac{x^2~{\rm d}x}{e^x+1} .
+\end{equation}
+I tabulate $n$ and results of the intergral in Table~\ref{tb2}. It is convergent with increasing $n$.
+\input{tb2}
+
+(b) This question depends on the temperature. Here I take $k_B T=20{\rm~MeV}$. The result is listed in Table~\ref{tb3}.
+\input{tb3}
+It is easy to check that
+\begin{equation}
+  \sum_{i=0}^{\infty} \left[\frac{{\rm d}n_e}{{\rm d}E}\right]_i \times \Delta E = n_e
+\end{equation}
+is valid.
+
+
+\end{document}
