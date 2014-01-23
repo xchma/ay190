@@ -1,0 +1,62 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load some basic packages that are useful to have
+% and that should be part of any LaTeX installation.
+%
+% be able to include figures
+\usepackage{graphicx}
+% get nice colors
+\usepackage{xcolor}
+
+% change default font to Palatino (looks nicer!)
+\usepackage{apjfonts}
+% load some useful math symbols/fonts
+\usepackage{latexsym,amsfonts,amsmath,amssymb}
+
+% comfort package to easily set margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% control some spacings
+%
+% spacing after a paragraph
+\setlength{\parskip}{.15cm}
+% indentation at the top of a new paragraph
+\setlength{\parindent}{0.0cm}
+
+
+\begin{document}
+
+\begin{center}
+\Large
+{\bf Ay190 -- Worksheet 6} \\
+\large
+Xiangcheng Ma \\
+Date: \today
+\end{center}
+
+\section*{Discrete Fourier Transform}
+
+(a) The function {\tt dft(x)}  that computes discrete Fourier transform is achieved in module ``{\tt dft.py}". To test this function, I uniformly generate 30 point in $[-2,2]$ for a Gaussian function
+\begin{equation}
+  f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} ,
+\end{equation}
+and calculate the discrete Fourier transform using my function and the {\tt np.fft.fft} function. The results are listed in Table~\ref{tb}. Their results are consistent within my output accuracy, i.e., $10^{-9}$.
+\input{tb}
+
+(b) For 100 calculations, the accumulated time versus $N^2$ are plotted in Figure~\ref{fig1}. It shows basically a linear relation.
+\begin{figure}[bth]
+\centering
+\includegraphics[width=0.9\textwidth]{fig1.pdf}
+\caption{Computer time for {\tt dft(x)} function.}
+\label{fig1}
+\end{figure}
+
+(c) For 100 calculations, the accumulated time versus $N\log(N)$ are plotted in Figure~\ref{fig2}. Although some scatter exists, the relation is in general linear.
+\begin{figure}[bth]
+\centering
+\includegraphics[width=0.9\textwidth]{fig2.pdf}
+\caption{Computer time for {\tt dft(x)} function.}
+\label{fig2}
+\end{figure}
+
+\end{document}
