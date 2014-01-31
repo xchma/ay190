@@ -1,0 +1,75 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load some basic packages that are useful to have
+% and that should be part of any LaTeX installation.
+%
+% be able to include figures
+\usepackage{graphicx}
+% get nice colors
+\usepackage{xcolor}
+
+% change default font to Palatino (looks nicer!)
+\usepackage{apjfonts}
+% load some useful math symbols/fonts
+\usepackage{latexsym,amsfonts,amsmath,amssymb}
+
+% comfort package to easily set margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% control some spacings
+%
+% spacing after a paragraph
+\setlength{\parskip}{.15cm}
+% indentation at the top of a new paragraph
+\setlength{\parindent}{0.0cm}
+
+
+\begin{document}
+
+\begin{center}
+\Large
+{\bf Ay190 -- Worksheet 7} \\
+\large
+Xiangcheng Ma \\
+Date: \today
+\end{center}
+
+\section*{Measuring $\pi$ with an MC Experiment}
+The MC estimate of $\pi$ with increasing number of points, $N$, is tabulated in Table~\ref{tb1}. The absolute error versus $\sqrt{N}$ is plotted in Figure~\ref{fig1}. The error basically follows $\sim 1/\sqrt{N}$ for not too large $N$. There is a threshold above which the error cannot be reduced by increasing $N$.
+\input{tb1}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{fig1.pdf}
+\caption{MC Estimation of $\pi$}
+\label{fig1}
+\end{figure}
+
+
+\section*{The Birthday Paradox}
+For number of people $N$, recall that there are 365 days in a year, the probability that at least two of them have same birthday is 
+\begin{equation}
+ P = 1 - \frac{365!/(365-N)!}{365^N} ,
+\end{equation}	
+where the bulk after the minus sign is just the probability that all of them have different birthdays.
+
+WIth MC method, for each $N$, I do 20000 experiments and get an estimated probability as tabulated below.
+\input{tb2}
+
+
+\section*{MC Integration}
+In this section, the intergration
+\begin{equation}
+  I = \int_2^3 f(x)~{\rm d}x = \int_2^3 x^2+1~{\rm d}x = \frac{22}{3}
+\end{equation}
+will be calculated using MC method.
+
+The results are tabulated in the following table and the error as a function of $\sqrt{N}$ is plotted in Figure~\ref{fig2}. As in question 1, the error basically follows $\sim 1/\sqrt{N}$ for not too large $N$. There is a threshold above which the error cannot be reduced by increasing $N$.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{fig2.pdf}
+\caption{MC Estimation of $\pi$}
+\label{fig2}
+\end{figure}
+
+\end{document}
