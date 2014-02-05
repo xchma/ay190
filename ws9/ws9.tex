@@ -1,0 +1,58 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load some basic packages that are useful to have
+% and that should be part of any LaTeX installation.
+%
+% be able to include figures
+\usepackage{graphicx}
+% get nice colors
+\usepackage{xcolor}
+
+% change default font to Palatino (looks nicer!)
+\usepackage{apjfonts}
+% load some useful math symbols/fonts
+\usepackage{latexsym,amsfonts,amsmath,amssymb}
+
+% comfort package to easily set margins
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% control some spacings
+%
+% spacing after a paragraph
+\setlength{\parskip}{.15cm}
+% indentation at the top of a new paragraph
+\setlength{\parindent}{0.0cm}
+
+
+\begin{document}
+
+\begin{center}
+\Large
+{\bf Ay190 -- Worksheet 9} \\
+\large
+Xiangcheng Ma \\
+Date: \today
+\end{center}
+
+\section*{Linear System}
+(1) Using {\tt np.loadtxt} to read $A$ and $\bf b$: \\
+{\tt A=np.loadtxt("LSEi\_m.dat")} \\
+{\tt b=np.loadtxt("LSEi\_bvec.dat")} \\
+
+The size of these systems are 10, 100, 200, 1000 and 2000 from $i=1$ to $5$. Using {\tt SciPy} routine {\tt numpy.linalg.slogdet} to calculate the logarithmic of the determinant of $A$ to determine whether these systems are solvable. The result is all of them can be solved.
+
+(2) I provide my own Gauss elimination routine {\tt gaussian.py}. Inside it, I add a few sentence in order to jump out the routine and claim an error if the systems is not solvable. The routine has been widly tested using a series of different $3\times3$ systems, including some of extreme cases. The solutions are solved as ``{\tt LSEi\_soln.dat}". The time consumption is listed in Table~\ref{tb} and plotted in Figure~\ref{fig}. In general, it follows an $O(N^3)$ complexity.
+
+(3) I use {\tt scipy.linalg.lu\_solve} routine, which is based on $LU$ decomposition method. The time comsumption is listed in Table~\ref{tb} and plotted in Figure~\ref{fig} for a reference. This routine is much faster than Gaussian elimination. It looks like a complexity of $O(N^n)$ ($n<3$) for smaller $N$, while incease to $O(N^3)$ for large $N$. However, this may result from system flutuations and therefore needs more tests.
+\input{tb}
+
+\begin{figure}[th]
+\centering
+\includegraphics[width=1.0\textwidth]{fig.png}
+\caption{Linear System Solver Time Consumption}
+\label{fig}
+\end{figure}
+
+
+
+\end{document}
